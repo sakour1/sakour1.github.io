@@ -1,0 +1,72 @@
+<?php
+// Get the input data from the request body as JSON
+$data = json_decode(file_get_contents("php://input"), true);
+
+// Extract the values from the data
+$size = $data["size"];
+$design = $data["design"];
+$location = $data["location"];
+$features = $data["features"];
+
+// Define some constants for the cost factors
+define("BASE_COST", 100);
+define("SIZE_FACTOR", 10);
+define("DESIGN_FACTOR", 20);
+define("LOCATION_FACTOR", 15);
+define("FEATURE_FACTOR", 5);
+
+// Calculate the base cost based on the size
+$base_cost = BASE_COST + ($size * SIZE_FACTOR);
+
+// Calculate the design cost based on the design
+switch ($design) {
+    case "basic":
+        $design_cost = $base_cost * 0.1;
+        break;
+    case "modern":
+        $design_cost = $base_cost * 0.2;
+        break;
+    case "luxury":
+        $design_cost = $base_cost * 0.3;
+        break;
+    default:
+        $design_cost = 0;
+}
+
+// Calculate the location cost based on the location
+switch ($location) {
+    case "urban":
+        $location_cost = $base_cost * 0.2;
+        break;
+    case "suburban":
+        $location_cost = $base_cost * 0.1;
+        break;
+    case "rural":
+        $location_cost = $base_cost * 0.05;
+        break;
+    default:
+        $location_cost = 0;
+}
+
+// Calculate the feature cost based on the features
+$feature_cost = 0;
+
+// Loop through the features array and add the feature cost for each feature
+foreach ($features as $feature) {
+    $feature_cost += FEATURE_FACTOR;
+}
+
+// Calculate the total cost by adding all the costs
+$total_cost = $base_cost + $design_cost + $location_cost + $feature_cost;
+
+// Create an array to store the result
+$result = array(
+    "cost" => $total_cost
+);
+
+// Set the response header to indicate the content type as JSON
+header("Content-Type: application/json");
+
+// Echo the result as a JSON string
+echo json_encode($result);
+?>

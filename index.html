@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Container Home Cost Calculator</title>
+    <!-- Link to the style.css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shipping Container Home Cost Calculator</h1>
+        <p>Welcome to the Shipping Container Home Cost Calculator website. Here you can estimate the cost of building your own shipping container home based on some parameters such as the size, design, location, and features of your home.</p>
+        <!-- Form to collect user input -->
+        <form id="calculator-form" action="calculator.php" method="post">
+            <div class="form-group">
+                <label for="size">Size of your home (in square feet):</label>
+                <input type="number" id="size" name="size" min="100" max="1000" required>
+            </div>
+            <div class="form-group">
+                <label for="design">Design of your home:</label>
+                <select id="design" name="design" required>
+                    <option value="">Select a design</option>
+                    <option value="basic">Basic</option>
+                    <option value="modern">Modern</option>
+                    <option value="luxury">Luxury</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Location of your home:</label>
+                <select id="location" name="location" required>
+                    <option value="">Select a location</option>
+                    <option value="urban">Urban</option>
+                    <option value="suburban">Suburban</option>
+                    <option value="rural">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="features">Features of your home:</label>
+                <!-- Checkbox to select multiple features -->
+                <input type="checkbox" id="solar" name="features[]" value="solar">
+                <label for="solar">Solar panels</label><br>
+                <input type="checkbox" id="insulation" name="features[]" value="insulation">
+                <label for="insulation">Insulation</label><br>
+                <input type="checkbox" id="windows" name="features[]" value="windows">
+                <label for="windows">Windows</label><br>
+                <input type="checkbox" id="doors" name="features[]" value="doors">
+                <label for="doors">Doors</label><br>
+            </div>
+            <!-- Button to submit the form -->
+            <button type="submit" id="calculate-button">Calculate</button>
+        </form>
+
+        <!-- Div to display the result -->
+        <div id="result"></div>
+
+    </div>
+
+    <!-- Link to the script.js file -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* Define the font family and size for the whole document */
+* {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Define the style and layout for the container div */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* Define the style and alignment for the h1 element */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Define the style and spacing for the p element */
+p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Define the style and layout for the form element */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Define the style and layout for the form-group class */
+.form-group {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+/* Define the style and layout for the label element */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Define the style and layout for the input element */
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Define the style and layout for the select element */
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Define the style and layout for the button element */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+}
+
+/* Define the style and layout for the result div */
+#result {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
